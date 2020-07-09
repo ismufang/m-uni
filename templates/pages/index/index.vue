@@ -1,6 +1,5 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.jpg"></image>
 		<view class="text-area">
 			<text class="title">{{title}}</text>
 		</view>
@@ -11,7 +10,7 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello <%= name %>'
 			}
 		},
 		onLoad() {

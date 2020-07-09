@@ -1,3 +1,14 @@
 # m-uni
 
-m-mui脚手架模板
+m-uni开发脚手架模板
+
+## Install
+
+```
+npm i m-uni -g
+```
+
+## run
+```
+muni
+``` 
