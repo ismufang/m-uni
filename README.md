@@ -1,4 +1,4 @@
-# m-uni
+# myuni
 
 myuni开发脚手架模板
 

@@ -1,10 +1,10 @@
 {
   "name": "myuni",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
-  "repository": "",
-  "author": "",
+  "repository": "https://github.com/ismufang/m-uni",
+  "author": "ismufang",
   "license": "MIT",
   "private": false,
   "bin": "cli.js",
