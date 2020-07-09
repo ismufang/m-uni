@@ -1,6 +1,6 @@
 {
     "name" : "<%= name %>",
-    "appid" : "__UNI__EA8AA01",
+    "appid" : "",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
