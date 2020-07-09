@@ -8,7 +8,7 @@ m-uni开发脚手架模板
 npm i m-uni -g
 ```
 
-## run
+## Run
 ```
 muni
 ``` 
