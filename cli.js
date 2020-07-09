@@ -21,7 +21,7 @@ inquirer.prompt([
     const destDir = process.cwd();
 
     const files = [
-        '.gitignore',
+        // '.gitignore',
         'App.vue',
         'index.html',
         'main.js',
