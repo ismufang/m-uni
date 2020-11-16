@@ -1,7 +1,5 @@
 <template>
-    <view class="mask" v-show="isShow" :style="{backgroundColor:bg}">
-
-    </view>
+    <view class="mask" v-show="isShow" :style="{backgroundColor:bg}"></view>
 </template>
 
 <script>

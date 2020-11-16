@@ -17,9 +17,7 @@
 	.container {
 		background: #ffffff;
 		overflow: hidden;
-		// min-height: 100vh;
 		margin: 0 auto;
-		// font-size: 14px;
 		font-size: 28rpx;
 		line-height: 1.5;
 		box-sizing: border-box;

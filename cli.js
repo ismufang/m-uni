@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// console.log('fang')
 
 const fs = require('fs')
 const path = require('path')
@@ -21,7 +20,7 @@ inquirer.prompt([
     const destDir = process.cwd();
 
     const files = [
-        // '.gitignore',
+        '.gitignore',
         'App.vue',
         'index.html',
         'main.js',
@@ -30,18 +29,27 @@ inquirer.prompt([
         'pages.json',
         'README.md',
         'uni.scss',
-        'components/loading/index.js',
-        'components/loading/loading.vue',
-        'components/mask/index.js',
-        'components/mask/mask.vue',
-        'components/modal/index.js',
-        'components/modal/modal.vue',
-        'components/toast/index.js',
-        'components/toast/toast.vue',
+        'version.md',
+        'vue.config.js',
+        'assets/style/base.scss',
+        'components/public/loading/index.js',
+        'components/public/loading/loading.vue',
+        'components/public/mask/index.js',
+        'components/public/mask/mask.vue',
+        'components/public/modal/index.js',
+        'components/public/modal/modal.vue',
+        'components/public/toast/index.js',
+        'components/public/toast/toast.vue',
+        'config/h5/pc.js',
         'pages/index/index.vue',
+        'pages/index/imgList.vue',
+        'service/api/home.js',
+        'service/api/index.js',
+        'service/request.js',
         'static/favicon.ico',
         'store/index.js',
         'utils/common.js',
+        'utils/h5/jwx.js',
     ]
 
     files.forEach(file=>{

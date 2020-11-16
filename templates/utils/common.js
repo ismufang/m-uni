@@ -1,9 +1,31 @@
-/**
- * 这是公共方法集合
- */
+export const getFormatTime = function (date) {
+    if (!date) {
+        date = new Date()
+    }
 
-export default {
-    add(...args){
-        return args.reduce((t, v) => t + v, 0)
+    const year = date.getFullYear(),
+        month = date.getMonth() + 1,
+        day = date.getDate(),
+        weekDay = date.getDay(),
+
+        hour = date.getHours(),
+        minute = date.getMinutes(),
+        second = date.getSeconds();
+
+    function formatNumber(n) {
+        n = n.toString();
+        return n[1] ? n : '0' + n
+    }
+
+    return {
+        date: [year, month, day].map(formatNumber).join('/'),
+        time: [hour, minute, second].map(formatNumber).join(':'),
+        year,
+        month,
+        day,
+        weekDay,
+        hour,
+        minute,
+        second
     }
 }
