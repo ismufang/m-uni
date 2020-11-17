@@ -17,10 +17,9 @@ inquirer.prompt([
 
     const tmplDir = path.join(__dirname, 'templates')
 
-    const destDir = process.cwd();
+    const destDir = process.cwd() + `/${answers.name}`;
 
     const files = [
-        '.gitignore',
         'App.vue',
         'index.html',
         'main.js',
@@ -41,6 +40,10 @@ inquirer.prompt([
         'components/public/toast/index.js',
         'components/public/toast/toast.vue',
         'config/h5/pc.js',
+        'config/h5/config.js',
+        'config/miniapp/config.js',
+        'config/env.js',
+        'config/index.js',
         'pages/index/index.vue',
         'pages/index/imgList.vue',
         'service/api/home.js',
@@ -63,6 +66,7 @@ inquirer.prompt([
             if(file.lastIndexOf('/')){
                 let filedir = file.substring(0, file.lastIndexOf('/'))
                 // console.log(filedir)
+                // console.log(path.join(destDir, filedir))
 
                 fs.mkdirSync(path.join(destDir, filedir), { recursive: true });
             }

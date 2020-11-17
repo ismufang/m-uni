@@ -18,7 +18,7 @@ export default {
         $vm.show = false;
 
         let loading = {
-            show({title}={title:'loading­...'}) {
+            show({title}={title:'Loading...'}) {
                 $vm.show = true;
                 $vm.title = title;
             },

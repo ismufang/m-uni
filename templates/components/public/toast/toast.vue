@@ -1,15 +1,16 @@
 <template>
+<view class="toast-wrapper">
     <view class="toast">
-        <view :class="{'toast-body':true,'fadein':fadeIn,'fadeout':fadeOut,'center':position=='center','top':position=='top','bottom':position=='bottom'}" 
-        :style="{backgroundColor:bg,color:color}">{{title}}</view>
+        <view :class="{'toast-body':true,'fadein':fadeIn,'fadeout':fadeOut,'center':position=='center','top':position=='top','bottom':position=='bottom'}" :style="{backgroundColor:bg,color:color}">{{title}}</view>
     </view>
+</view>
 </template>
 
 <script>
 export default {
-    name: 'toast',
-    data(){
-        return{
+    name: 'MyToast',
+    data() {
+        return {
             fadeIn: false,
             fadeOut: false,
             title: '提示', // 内容
@@ -17,40 +18,44 @@ export default {
             bg: 'rgba(0,0,0,.7)', // 背景
             color: '#fff', // 文本颜色
             position: 'center', // 文本位置 top, center, bottom
-            success: res=>{},
-            fail: res=>{}
+            success: res => {},
+            fail: res => {}
         }
     },
-	
-	created(){
-		this.fadeIn = true;
-	},
+
+    created() {
+        this.fadeIn = true;
+    },
 
     mounted() {
         this.setTimer();
     },
     methods: {
-        setTimer(){
+        setTimer() {
             let self = this;
 
-            setTimeout(()=>{
+            setTimeout(() => {
                 self.fadeIn = false;
                 self.fadeOut = true;
 
-                setTimeout(()=>{
+                setTimeout(() => {
                     self.$el.remove(); // 移除DOM
                     // console.log('实例关闭');
                     self.success('success');
-                },500)
-                
-            },self.duration);
+                }, 500)
+
+            }, self.duration);
         }
     },
 }
 </script>
 
 <style lang="scss" scoped>
-    .toast{
+.toast-wrapper {
+    height: 100vh;
+    overflow: hidden;
+
+    .toast {
         position: fixed;
         top: 0;
         left: 0;
@@ -60,13 +65,14 @@ export default {
         padding: 30rpx;
         box-sizing: border-box;
         z-index: 10011;
-        &-body{
+
+        &-body {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             display: inline-block;
-            background: rgba(0,0,0,.5);
+            background: rgba(0, 0, 0, .5);
             color: #fff;
             font-size: 30rpx;
             text-align: center;
@@ -78,44 +84,53 @@ export default {
             box-sizing: border-box;
             max-width: 300px;
         }
-        .top{
+
+        .top {
             top: 10%;
             left: 50%;
             transform: translateX(-50%);
         }
-        .center{
+
+        .center {
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
         }
-        .bottom{
-            bottom:10%;
+
+        .bottom {
+            bottom: 10%;
             left: 50%;
             transform: translateX(-50%);
         }
-        .fadein{
+
+        .fadein {
             animation: fadein 0.5s;
         }
-        .fadeout{
+
+        .fadeout {
             animation: fadeout 0.5s;
             opacity: 0;
         }
+
         @keyframes fadein {
-            from{
+            from {
                 opacity: 0;
             }
-            to{
+
+            to {
                 opacity: 1;
             }
         }
+
         @keyframes fadeout {
-            from{
+            from {
                 opacity: 1;
             }
-            to{
+
+            to {
                 opacity: 0;
             }
         }
     }
-
+}
 </style>

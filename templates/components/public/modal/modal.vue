@@ -1,5 +1,5 @@
 <template>
-<view class="component-wrap">
+<view class="modal-wrapper">
     <view :class="{'modal':true,'fadeout':fadeOut}">
         <view :class="{'modal-body':true,'fadein':fadeIn,'fadeout':fadeOut}">
             <view class="modal-body-title">{{title}}</view>
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-    name: 'modal',
+    name: 'MyModal',
     data() {
         return {
             fadeIn: false,
@@ -53,19 +53,21 @@ export default {
                     cancel: true
                 });
             }
-            // console.log(type);
         }
     },
 }
 </script>
 
 <style lang="scss" scoped>
-.component-wrap {
-    @mixin p-nowrap() {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
+@mixin p-nowrap {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.modal-wrapper {
+    height: 100vh;
+    overflow: hidden;
 
     .modal {
         position: fixed;
@@ -78,15 +80,12 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 10011;
+        z-index: 9999;
 
         &-body {
             position: absolute;
             width: 70%;
             max-width: 300px;
-            // top: 50%;
-            // left: 50%;
-            // transform: translate(-50%,-50%);
             background: #fff;
             border-radius: 30rpx;
             font-size: 28rpx;
@@ -108,6 +107,7 @@ export default {
                 line-height: 1.4;
                 color: #999;
                 max-height: 400px;
+                word-break: break-all;
                 overflow-y: auto;
             }
 

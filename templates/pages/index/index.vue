@@ -26,12 +26,6 @@ import Imgs from './imgList'
 		},
 		onLoad() {
 			this.init()
-			setTimeout(()=>{
-				this.$toast({
-					title: 'hh'
-				})
-			},3000)
-			
 		},
 		methods: {
 			init(){

@@ -4,7 +4,7 @@
  */
 import Loading from './public/loading'
 import Mask from './public/mask'
-import Toast from './public/loading'
+import Toast from './public/toast'
 import Modal from './public/modal'
 
 const plugins = {

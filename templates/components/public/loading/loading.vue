@@ -1,30 +1,34 @@
 <template>
-    <view class="loading" v-show="show">
+<view class="loading-wrapper" v-show="show">
+    <view class="loading">
         <view class="loading-body" :style="{backgroundColor: title?'rgba(0,0,0,.7)':'transparent'}">
             <!-- <image :src="img" class="loading-body-img" mode="widthFix" v-if="!title"></image> -->
             <view class="loading-body-anim"></view>
             <view class="loading-body-text">{{title}}</view>
         </view>
     </view>
+</view>
 </template>
 
 <script>
-    export default {
-        name: 'loading',
-        data(){
-            return {
-                title: '',
-                img: '',
-                show: false,
-            }
-        },
-        methods: {
-        },
-    }
+export default {
+    name: 'MyLoading',
+    data() {
+        return {
+            title: '',
+            img: '',
+            show: false,
+        }
+    },
+    methods: {},
+}
 </script>
 
 <style lang="scss" scoped>
-    .loading{
+.loading-wrapper {
+    height: 100vh;
+
+    .loading {
         position: fixed;
         top: 0;
         left: 0;
@@ -38,7 +42,8 @@
         align-items: center;
         justify-content: center;
         z-index: 9999;
-        &-body{
+
+        &-body {
             // background: rgba(0,0,0,.5);
             // height: 90rpx;
             // line-height: 90rpx;
@@ -54,19 +59,22 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            &-text{
+
+            &-text {
                 // margin-top: 10rpx;
             }
-            &-img{
+
+            &-img {
                 width: 150rpx;
             }
+
             &-anim {
                 width: 50rpx;
                 height: 50rpx;
                 display: inline-block;
-                border: 8rpx solid rgba(189,189,189 ,0.25);
-                border-left-color: rgba(189,189,189 ,0.7);
-                border-top-color: rgba(189,189,189 ,0.7);
+                border: 8rpx solid rgba(189, 189, 189, 0.25);
+                border-left-color: rgba(189, 189, 189, 0.7);
+                border-top-color: rgba(189, 189, 189, 0.7);
                 animation: rotate 600ms infinite linear;
                 border-radius: 50%;
                 margin-bottom: 10rpx;
@@ -79,4 +87,5 @@
             }
         }
     }
+}
 </style>
