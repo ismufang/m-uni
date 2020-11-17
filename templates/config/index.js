@@ -1,4 +1,4 @@
-// #ifdef h5
+// #ifdef H5
 import h5Config from './h5/config'
 // #endif
 

@@ -1,4 +1,4 @@
-# <%= name %>version 版本注解 
+# <%= name %> version 版本注解 
 
 # 0.0.1
 - ...

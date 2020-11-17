@@ -39,6 +39,7 @@ inquirer.prompt([
         'components/public/modal/modal.vue',
         'components/public/toast/index.js',
         'components/public/toast/toast.vue',
+        'components/index.js',
         'config/h5/pc.js',
         'config/h5/config.js',
         'config/miniapp/config.js',
